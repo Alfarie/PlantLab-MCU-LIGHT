@@ -27,8 +27,8 @@ class Sensors : public Task
     virtual void OnUpdate(uint32_t delta_time)
     {
         cmd = "{" + String (Light::instance()->GetLight() )   + "}";
+        toHq.println(cmd);
         Serial.println(cmd);
     }
 };
-
 Sensors *Sensors::s_instance = 0;
